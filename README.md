@@ -59,6 +59,7 @@ php artisan serve
 
 php artisan make:controller PostController
 #建立Controller
+
 php artisan make:controller PostController --resource
 #建立Resource Controller
 
@@ -70,15 +71,19 @@ php artisan make:migration create_posts_table
 
 php artisan migrate
 #執行Migration
+
 php artisan migrate:rollback
 #回復Migration
+
 php artisan migrate:reset
 #重置Migration
 
 php artisan make:seeder PostsTableSeeder
 #建立seeder
+
 php artisan db:seed
 #執行seeds
+
 php artisan make:factory PostFactory
 #建立Factory
 ```
