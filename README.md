@@ -87,3 +87,7 @@ php artisan db:seed
 php artisan make:factory PostFactory
 #建立Factory
 ```
+
+## 重要事項
+
+- 當.env有修改時，伺服器(php artisn serve)需要重啟才會寫入
