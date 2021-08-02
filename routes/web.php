@@ -26,3 +26,5 @@ Route::get('/','PostController@index')->name('post.index');
 Route::get('/create','PostController@create')->name('post.create');
 Route::post('/post','PostController@store')->name('post.store');
 Route::get('/post/{post}','PostController@show')->name('post.show');
+
+Route::get('/post/edit/{post}','PostController@edit')->name('post.edit');
