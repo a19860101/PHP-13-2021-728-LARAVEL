@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>文章首頁</h1>
+    {{ $posts }}
     <a href="/create">新增文章</a>
 </body>
 </html>
