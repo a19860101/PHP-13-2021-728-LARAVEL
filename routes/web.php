@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/about',function(){
 //     return view('about');
 // });
-Route::get('/','PostController@index');
-Route::get('/create','PostController@create');
-Route::post('/post','PostController@store');
-Route::get('/post/{post}','PostController@show');
+Route::get('/','PostController@index')->name('post.index');
+Route::get('/create','PostController@create')->name('post.create');
+Route::post('/post','PostController@store')->name('post.store');
+Route::get('/post/{post}','PostController@show')->name('post.show');

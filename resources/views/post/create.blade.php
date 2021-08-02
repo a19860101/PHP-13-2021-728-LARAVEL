@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>新增文章</h1>
-    <form action="/post" method="post">
+    <form action="{{route('post.store')}}" method="post">
         @csrf
         <div>
             <label for="title">文章標題</label>

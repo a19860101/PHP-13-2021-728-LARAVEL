@@ -9,6 +9,7 @@
 <body>
     <nav>
         <a href="/create">新增文章</a>
+        <a href="{{route('post.create')}}">新增文章</a>
     </nav>
 
     @foreach($posts as $post)
@@ -18,6 +19,7 @@
             {{$post -> content}}
             <div>
                 <a href="/post/{{$post->id}}">繼續閱讀</a>
+                <a href="{{route('post.show',['post' => $post->id])}}">繼續閱讀</a>
             </div>
         </div>
         <div>
