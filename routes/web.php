@@ -22,6 +22,5 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/about',function(){
 //     return view('about');
 // });
-Route::get('/',function(){
-    return view('post.index');
-});
+Route::get('/','PostController@index');
+Route::get('/create','PostController@create');

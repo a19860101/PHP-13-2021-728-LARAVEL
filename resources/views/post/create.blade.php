@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>文章首頁</h1>
-    <a href="/create">新增文章</a>
+    <h1>新增文章</h1>
 </body>
 </html>
