@@ -57,6 +57,11 @@
 php artisan serve
 #執行開發伺服器
 
+php artisan make:model Post
+#建立Model
+php artisan make:model Post -mcr
+#建立Model以及migracion controller resource (m:migrtion c:controller r:resource)
+
 php artisan make:controller PostController
 #建立Controller
 
