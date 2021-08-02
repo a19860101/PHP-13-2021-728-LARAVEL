@@ -18,7 +18,9 @@ class PostController extends Controller
         //
         // $posts = Post::all();
         $posts = Post::get();
-        return view('post.index')->with(['posts' => $posts]);
+        // return view('post.index')->with(['posts' => $posts]);
+        // return view('post.index',['posts' => $posts]);
+        return view('post.index',compact('posts'));
     }
 
     /**
@@ -58,7 +60,8 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
-        return $post;
+        // return view('post.show',['post' => $post]);
+        return view('post.show',compact('post'));
 
     }
 
