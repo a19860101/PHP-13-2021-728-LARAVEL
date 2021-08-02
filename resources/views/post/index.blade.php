@@ -7,12 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>文章首頁</h1>
+    <nav>
+        <a href="/create">新增文章</a>
+    </nav>
+
     @foreach($posts as $post)
     <div>
         <h2>{{$post -> title}}</h2>
         <div>
             {{$post -> content}}
+            <div>
+                <a href="/post/{{$post->id}}">繼續閱讀</a>
+            </div>
         </div>
         <div>
             最後更新時間 {{$post -> updated_at}}
@@ -20,6 +26,5 @@
     </div>
     <hr>
     @endforeach
-    <a href="/create">新增文章</a>
 </body>
 </html>

@@ -25,3 +25,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','PostController@index');
 Route::get('/create','PostController@create');
 Route::post('/post','PostController@store');
+Route::get('/post/{post}','PostController@show');
