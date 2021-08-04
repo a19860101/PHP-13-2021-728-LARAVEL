@@ -31,3 +31,5 @@ Route::get('/post/edit/{post}','PostController@edit')->name('post.edit');
 Route::put('/post/{post}','PostController@update')->name('post.update');
 // Route::patch();
 Route::delete('/post/{post}','PostController@destroy')->name('post.delete');
+
+Route::resource('/category','CategoryController');

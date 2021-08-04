@@ -14,6 +14,7 @@
     <nav class="px-5 py-3 bg-dark mb-5">
         <a href="{{route('post.index')}}" class="text-light mx-2">所有文章</a>
         <a href="{{route('post.create')}}" class="text-light mx-2">新增文章</a>
+        <a href="{{route('category.create')}}" class="text-light mx-2">新增分類</a>
     </nav>
     @yield('content')
     @yield('banner')
