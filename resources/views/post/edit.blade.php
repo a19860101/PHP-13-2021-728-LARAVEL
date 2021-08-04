@@ -8,8 +8,9 @@
 </head>
 <body>
     <h1>編輯</h1>
-    <form action="" method="post">
+    <form action="{{route('post.update')}}" method="post">
         @csrf
+        @method('put')
         <div>
             <label for="">標題</label>
             <input type="text" name="title" value="{{$post->title}}">

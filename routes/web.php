@@ -28,3 +28,5 @@ Route::post('/post','PostController@store')->name('post.store');
 Route::get('/post/{post}','PostController@show')->name('post.show');
 
 Route::get('/post/edit/{post}','PostController@edit')->name('post.edit');
+Route::put('/post','PostController@update')->name('post.update');
+// Route::patch();
