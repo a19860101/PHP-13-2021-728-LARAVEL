@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>編輯</h1>
-    <form action="{{route('post.update')}}" method="post">
+    <form action="{{route('post.update',$post->id)}}" method="post">
         @csrf
         @method('put')
         <div>
