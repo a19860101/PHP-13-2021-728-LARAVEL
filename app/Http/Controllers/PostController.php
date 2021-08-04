@@ -16,8 +16,8 @@ class PostController extends Controller
     {
         //
         //
-        // $posts = Post::all();
-        $posts = Post::get();
+        $posts = Post::all();
+        $posts = Post::orderBy('id','DESC')->get();
         // return view('post.index')->with(['posts' => $posts]);
         // return view('post.index',['posts' => $posts]);
         return view('post.index',compact('posts'));
@@ -57,9 +57,12 @@ class PostController extends Controller
         // $post->save();
 
         // 方法三
-        $post = new Post;
-        $post->fill($request->all());
-        $post->save();
+        // $post = new Post;
+        // $post->fill($request->all());
+        // $post->save();
+
+        //方法四
+        Post::create($request->all());
 
         return redirect('/');
     }
