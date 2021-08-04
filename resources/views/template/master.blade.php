@@ -11,9 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-        {{-- <a href="/create">新增文章</a> --}}
-        <a href="{{route('post.create')}}">新增文章</a>
+    <nav class="px-5 py-3 bg-dark mb-5">
+        <a href="{{route('post.index')}}" class="text-light mx-2">所有文章</a>
+        <a href="{{route('post.create')}}" class="text-light mx-2">新增文章</a>
     </nav>
     @yield('content')
     @yield('banner')
