@@ -12,6 +12,15 @@
                     <input type="text" name="title" value="{{$post->title}}" class="form-control">
                 </div>
                 <div class="mb-3">
+                    <label for="" class="form-label">文章分類</label>
+                    <select name="category_id" id="" class="form-control">
+                        @foreach($categories as $category)
+                        {{-- <option value="{{$category->id}}" @if($category->id == $post->category_id) selected @endif>{{$category->title}}</option> --}}
+                        <option value="{{$category->id}}" {{$category->id == $post->category_id ? 'selected':'' }}>{{$category->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">內文</label>
                     <textarea name="content" id="" cols="30" rows="10" class="form-control">{{$post->content}}</textarea>
                 </div>
