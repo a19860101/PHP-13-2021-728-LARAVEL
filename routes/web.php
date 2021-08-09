@@ -33,3 +33,7 @@ Route::put('/post/{post}','PostController@update')->name('post.update');
 Route::delete('/post/{post}','PostController@destroy')->name('post.delete');
 
 Route::resource('/category','CategoryController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
