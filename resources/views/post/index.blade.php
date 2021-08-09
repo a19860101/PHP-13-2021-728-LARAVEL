@@ -11,6 +11,9 @@
         <div class="col-lg-8 col-10 border rounded-3 p-3 my-3">
             <h3>{{$post -> title}}</h3>
             <div>
+                分類:{{$post->category->title}}
+            </div>
+            <div>
                 {{$post -> content}}
                 <div>
                     <a href="/post/{{$post->id}}">繼續閱讀</a>

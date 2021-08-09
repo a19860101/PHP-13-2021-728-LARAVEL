@@ -8,4 +8,9 @@ class Post extends Model
 {
     //加入白名單
     protected $fillable = ['title','content'];
+
+    public function category(){
+        return $this->belongsTo('App\Category');
+    }
+
 }
