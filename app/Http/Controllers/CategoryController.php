@@ -91,5 +91,8 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category->delete();
+        $categories = Category::get();
+        return view('category.index',compact('categories'));
     }
 }
