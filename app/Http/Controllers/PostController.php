@@ -49,25 +49,29 @@ class PostController extends Controller
         // $post = new Post;
         // $post->title = $request->title;
         // $post->content = $request->content;
+        // $post->category_id = $request->category_id;
         // $post->save();
 
         // 方法二
         // $post = new Post;
         // $post->fill([
         //     'title' => $request->title,
-        //     'content' => $request->content
+        //     'content' => $request->content,
         // ]);
         // $post->save();
 
         // 方法三
-        // $post = new Post;
-        // $post->fill($request->all());
-        // $post->save();
+        $post = new Post;
+        $post->fill($request->all());
+        $post->category_id = $request->category_id;
+        $post->save();
 
         //方法四
-        Post::create($request->all());
+        // Post::create($request->all());
 
         return redirect('/');
+
+
     }
 
     /**
