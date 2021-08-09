@@ -15,6 +15,9 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        $categories = Category::get();
+        // return $categories;
+        return view('category.index',compact('categories'));
     }
 
     /**
@@ -25,7 +28,8 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('category.create');
+        $categories = Category::get();
+        return view('category.index',compact('categories'));
     }
 
     /**
@@ -41,7 +45,7 @@ class CategoryController extends Controller
         $category->fill($request->all());
         $category->save();
         // Category::create($request->all());
-        return redirect()->route('category.create');
+        return redirect()->route('category.index');
     }
 
     /**
