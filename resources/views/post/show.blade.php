@@ -8,12 +8,14 @@
                 {{$post->content}}
             </div>
             <div>最後更新時間{{$post->updated_at}}</div>
+            @if(Auth::id() == $post->user_id)
             <a href="{{route('post.edit',['post' => $post->id])}}" class="btn btn-success">編輯</a>
             <form action="{{route('post.delete',$post->id)}}" method="post" class="d-inline-block">
                 @csrf
                 @method('delete')
                 <input type="submit" value="刪除" onclick="return confirm('確認刪除?')" class="btn btn-danger">
             </form>
+            @endif
         </div>
     </div>
 </div>
