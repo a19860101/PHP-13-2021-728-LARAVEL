@@ -32,7 +32,12 @@ Route::put('/post/{post}','PostController@update')->name('post.update')->middlew
 // Route::patch();
 Route::delete('/post/{post}','PostController@destroy')->name('post.delete')->middleware('auth');
 
-Route::resource('/category','CategoryController');
+Route::resource('/category','CategoryController')->middleware('auth');
+// Route::group(['middleware'=>'auth'],function(){
+//     Route::resource('/category','CategoryController')->except('index');
+// });
+// Route::resource('/category','CategoryController')->only('index');
+
 
 Auth::routes();
 
