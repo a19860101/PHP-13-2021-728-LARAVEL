@@ -12,6 +12,8 @@
             <h3>{{$post -> title}}</h3>
             <div>
                 分類:{{$post->category->title}}
+                <br>
+                作者:{{$post->user->name}}
             </div>
             <div>
                 {{$post -> content}}
