@@ -15,8 +15,8 @@
                 <br>
                 作者:{{$post->user->name}}
             </div>
-            <div>
-                {{$post -> content}}
+            <div class="my-5">
+                {{Str::limit($post->content,200)}}
                 <div>
                     <a href="/post/{{$post->id}}">繼續閱讀</a>
                     <a href="{{route('post.show',['post' => $post->id])}}">繼續閱讀</a>
@@ -24,6 +24,12 @@
             </div>
             <div>
                 最後更新時間 {{$post -> updated_at}}
+                <br>
+                <?php
+                    Carbon\Carbon::setLocale('zh_TW');
+                ?>
+                最後更新時間 {{ Carbon\Carbon::parse($post->updated_at)->diffForHumans()}}
+
             </div>
         </div>
         <div class="w-100"></div>
