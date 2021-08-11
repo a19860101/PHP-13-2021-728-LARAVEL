@@ -23,14 +23,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('about');
 // });
 Route::get('/','PostController@index')->name('post.index');
-Route::get('/create','PostController@create')->name('post.create');
-Route::post('/post','PostController@store')->name('post.store');
+Route::get('/create','PostController@create')->name('post.create')->middleware('auth');
+Route::post('/post','PostController@store')->name('post.store')->middleware('auth');
 Route::get('/post/{post}','PostController@show')->name('post.show');
 
-Route::get('/post/edit/{post}','PostController@edit')->name('post.edit');
-Route::put('/post/{post}','PostController@update')->name('post.update');
+Route::get('/post/edit/{post}','PostController@edit')->name('post.edit')->middleware('auth');
+Route::put('/post/{post}','PostController@update')->name('post.update')->middleware('auth');
 // Route::patch();
-Route::delete('/post/{post}','PostController@destroy')->name('post.delete');
+Route::delete('/post/{post}','PostController@destroy')->name('post.delete')->middleware('auth');
 
 Route::resource('/category','CategoryController');
 
