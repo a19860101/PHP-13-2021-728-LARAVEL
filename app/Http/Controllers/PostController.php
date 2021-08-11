@@ -6,6 +6,7 @@ use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -64,8 +65,16 @@ class PostController extends Controller
         // 上船封面
 
         // return $request->file('cover')->store('images','public');
-        return $request->file('cover')->storeAs('images','qqq','public');
+        // return $request->file('cover')->storeAs('images','qqq','public');
 
+        if($request->file('cover')){
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            $cover = Str::uuid().'.'.$ext;
+            $request->file('cover')->storeAs('images',$cover,'public');
+        }else{
+            $cover = null;
+        }
+        return;
         // 方法三
         $post = new Post;
         $post->fill($request->all());
