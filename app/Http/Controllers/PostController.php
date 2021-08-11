@@ -74,12 +74,12 @@ class PostController extends Controller
         }else{
             $cover = null;
         }
-        return;
         // 方法三
         $post = new Post;
         $post->fill($request->all());
         $post->category_id = $request->category_id;
         $post->user_id = Auth::id();
+        $post->cover = $cover;
         $post->save();
 
         //方法四
