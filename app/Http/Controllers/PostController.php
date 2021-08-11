@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -64,6 +65,7 @@ class PostController extends Controller
         $post = new Post;
         $post->fill($request->all());
         $post->category_id = $request->category_id;
+        $post->user_id = Auth::id();
         $post->save();
 
         //方法四
