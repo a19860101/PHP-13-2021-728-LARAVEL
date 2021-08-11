@@ -22,12 +22,16 @@
                     <li class="nav-item">
                         <a href="{{route('post.index')}}" class="nav-link">所有文章</a>
                     </li>
+                    @auth
                     <li class="nav-item">
                         <a href="{{route('post.create')}}" class="nav-link">新增文章</a>
                     </li>
+                    @if(Auth::user()->name == 'admin')
                     <li class="nav-item">
                         <a href="{{route('category.create')}}" class="nav-link">新增分類</a>
                     </li>
+                    @endif
+                    @endauth
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
