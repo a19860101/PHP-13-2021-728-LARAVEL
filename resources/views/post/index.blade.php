@@ -11,6 +11,13 @@
         <div class="col-lg-8 col-10 border rounded-3 p-3 my-3">
             <h3>{{$post -> title}}</h3>
             <div>
+                @if($post->cover == null)
+                <img src="{{asset('storage/images/question-marks.jpg')}}" class="w-100">
+                @else
+                <img src="{{asset('storage/images/'.$post->cover)}}" class="w-100">
+                @endif
+            </div>
+            <div>
                 分類:{{$post->category->title}}
                 <br>
                 作者:{{$post->user->name}}

@@ -15,7 +15,7 @@ class AddCoverToPosts extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             //
-            $table->string('cover');
+            $table->string('cover')->nullable();
         });
     }
 
