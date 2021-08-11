@@ -23,7 +23,7 @@
                 作者:{{$post->user->name}}
             </div>
             <div class="my-5">
-                {{Str::limit($post->content,200)}}
+                {{Str::limit(strip_tags($post->content,200))}}
                 <div>
                     <a href="/post/{{$post->id}}">繼續閱讀</a>
                     <a href="{{route('post.show',['post' => $post->id])}}">繼續閱讀</a>

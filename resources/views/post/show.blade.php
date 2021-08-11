@@ -5,7 +5,7 @@
         <div class="col-6">
             <h2>{{$post->title}}</h2>
             <div>
-                {{$post->content}}
+                {!! $post->content !!}
             </div>
             <div>最後更新時間{{$post->updated_at}}</div>
             @if(Auth::id() == $post->user_id)

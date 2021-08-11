@@ -23,8 +23,8 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">內文</label>
-                    <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+                    <label for="content" class="form-label">內文</label>
+                    <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
                 </div>
 
                 <input type="submit" value="新增" class="btn btn-primary">
@@ -33,5 +33,16 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#content',
+        language: 'zh_TW',
+        height: '400px',
+        toolbar: 'removeformat | image code link | styleselect bullist numlist | bold italic forecolor underline strikethrough |'+
+        '|alignleft aligncenter alignright ',
+        plugins: 'image code link lists imagetools ',
+    });
+</script>
 @endsection
 
