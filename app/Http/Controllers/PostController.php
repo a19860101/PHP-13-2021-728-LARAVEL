@@ -61,6 +61,11 @@ class PostController extends Controller
         // ]);
         // $post->save();
 
+        // 上船封面
+
+        // return $request->file('cover')->store('images','public');
+        return $request->file('cover')->storeAs('images','qqq','public');
+
         // 方法三
         $post = new Post;
         $post->fill($request->all());
