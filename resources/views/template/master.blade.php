@@ -20,15 +20,15 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="{{route('post.index')}}" class="nav-link">所有文章</a>
+                        <a href="{{route('post.index')}}" class="nav-link">{{__("All Posts")}}</a>
                     </li>
                     @auth
                     <li class="nav-item">
-                        <a href="{{route('post.create')}}" class="nav-link">新增文章</a>
+                        <a href="{{route('post.create')}}" class="nav-link">{{__("New Posts")}}</a>
                     </li>
                     @if(Auth::user()->name == 'admin')
                     <li class="nav-item">
-                        <a href="{{route('category.create')}}" class="nav-link">新增分類</a>
+                        <a href="{{route('category.create')}}" class="nav-link">{{__("New Category")}}</a>
                     </li>
                     @endif
                     @endauth

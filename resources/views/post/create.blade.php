@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
-            <h2>新增文章</h2>
+            <h2>{{__('New Posts')}}</h2>
             <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
