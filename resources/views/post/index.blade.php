@@ -41,6 +41,9 @@
         </div>
         <div class="w-100"></div>
         @endforeach
+        <div class="col-8">
+            {{$posts->links()}}
+        </div>
     </div>
 </div>
 

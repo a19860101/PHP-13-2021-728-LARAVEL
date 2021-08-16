@@ -19,8 +19,10 @@ class PostController extends Controller
     {
         //
         //
-        $posts = Post::all();
-        $posts = Post::orderBy('id','DESC')->get();
+        // $posts = Post::all();
+        // $posts = Post::orderBy('id','DESC')->get();
+        $posts = Post::orderBy('id','DESC')->paginate(2);
+        // $posts = Post::orderBy('id','DESC')->simplePaginate(2);
         // return view('post.index')->with(['posts' => $posts]);
         // return view('post.index',['posts' => $posts]);
         return view('post.index',compact('posts'));
