@@ -69,6 +69,12 @@ class PostController extends Controller
         // return $request->file('cover')->store('images','public');
         // return $request->file('cover')->storeAs('images','qqq','public');
 
+        //驗證
+        $request->validate([
+            'title'=>'required|max:10'
+        ]);
+
+
         if($request->file('cover')){
             $ext = $request->file('cover')->getClientOriginalExtension();
             $cover = Str::uuid().'.'.$ext;
