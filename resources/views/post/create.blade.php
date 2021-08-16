@@ -34,7 +34,11 @@
     </div>
 </div>
 
-{{$errors}}
+@if ($errors->any())
+    @foreach($errors->all() as $error)
+        <div class="alert alert-danger">{{$error}}</div>
+    @endforeach
+@endif
 
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
